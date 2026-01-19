@@ -11,36 +11,40 @@
 <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg: #07070c;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.10);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.72);
-      --line: rgba(255,255,255,.14);
+  :root{
+  /* Core background */
+  --bg: #2b1657;            /* deep purple */
+  --panel: rgba(139,92,246,.22);
+  --panel2: rgba(45,212,191,.25);
 
-      /* Purple + Teal */
-      --purple: #8b5cf6;
-      --teal: #2dd4bf;
+  /* Text */
+  --text: rgba(255,255,255,.96);
+  --muted: rgba(255,255,255,.78);
+  --line: rgba(255,255,255,.22);
 
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
-      --radius: 18px;
-      --max: 1100px;
-    }
+  /* Brand colors */
+  --purple: #a78bfa;        /* soft luxury purple */
+  --teal: #5eead4;          /* clean teal */
+
+  --shadow: 0 18px 50px rgba(0,0,0,.35);
+  --radius: 18px;
+  --max: 1100px;
+}
+
 
     *{ box-sizing: border-box; }
     html, body{ height:100%; }
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
-      background:
-
-        radial-gradient(900px 550px at 12% 10%, rgba(139,92,246,.22), transparent 60%),
-        radial-gradient(900px 550px at 88% 12%, rgba(45,212,191,.18), transparent 55%),
-        radial-gradient(900px 550px at 50% 110%, rgba(139,92,246,.12), transparent 55%),
-        linear-gradient(180deg, #05050a 0%, var(--bg) 55%, #040409 100%);
-    }
+  body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(900px 550px at 15% 10%, rgba(167,139,250,.45), transparent 60%),
+    radial-gradient(900px 550px at 85% 15%, rgba(94,234,212,.40), transparent 60%),
+    radial-gradient(900px 600px at 50% 110%, rgba(167,139,250,.30), transparent 60%),
+    linear-gradient(180deg, #3b1c72 0%, #241048 60%, #1a0b34 100%);
+}
+  
 
     a{ color: inherit; }
     .wrap{ max-width: var(--max); margin: 0 auto; padding: 22px; }
@@ -260,12 +264,17 @@ color: var(--muted);
       gap: 16px;
     }
     .panel{
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 35px rgba(0,0,0,.28);
-      overflow:hidden;
-    }
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(139,92,246,.18),
+      rgba(45,212,191,.12)
+    );
+  border-radius: var(--radius);
+  box-shadow: 0 10px 35px rgba(0,0,0,.25);
+}
+
     .panel .head{
       padding: 16px 16px 0;
     }
