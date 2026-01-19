@@ -146,37 +146,60 @@
       box-shadow: 0 0 18px rgba(139,92,246,.65);
     }
 .hero h2{
-  margin: 14px 0 10px;
-  font-family: "Allura", cursive;
-  font-weight: 400;
-  font-size: clamp(34px, 4.5vw, 50px);
-  line-height: 1.15;
-  letter-spacing: .2px;
   position: relative;
   display: inline-block;
-  padding-right: 40px;
+  padding: 6px 54px 10px 6px; /* gives room for stardust */
 }
 
-/* Elegant stardust (not emoji/cartoon) */
+/* Star cluster (right side) */
 .hero h2::after{
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 60%;
-  width: 32px;
-  height: 12px;
+  content:"";
+  position:absolute;
+  right: 6px;
+  top: 55%;
+  width: 52px;
+  height: 28px;
   transform: translateY(-50%);
   background:
-    radial-gradient(circle, rgba(255,255,255,.9) 0 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,255,255,.7) 0 1px, transparent 2px);
+    radial-gradient(circle, rgba(255,255,255,.95) 0 1.4px, transparent 2.2px),
+    radial-gradient(circle, rgba(255,255,255,.80) 0 1.1px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,.70) 0 1px, transparent 1.9px),
+    radial-gradient(circle, rgba(255,255,255,.55) 0 .9px, transparent 1.8px),
+    radial-gradient(circle, rgba(167,139,250,.55) 0 1px, transparent 2px),
+    radial-gradient(circle, rgba(94,234,212,.45) 0 1px, transparent 2px);
   background-position:
-    6px 6px,
-    18px 2px;
+    6px 18px,
+    18px 6px,
+    28px 16px,
+    42px 10px,
+    14px 22px,
+    36px 22px;
   filter:
-    drop-shadow(0 0 4px rgba(139,92,246,.25))
-    drop-shadow(0 0 3px rgba(45,212,191,.18));
-  opacity: .6;
+    drop-shadow(0 0 6px rgba(167,139,250,.35))
+    drop-shadow(0 0 5px rgba(94,234,212,.28));
+  opacity: .8;
+  pointer-events:none;
 }
+
+/* Soft “stardust trail” (behind the words) */
+.hero h2::before{
+  content:"";
+  position:absolute;
+  left: -10px;
+  right: -10px;
+  top: 62%;
+  height: 18px;
+  transform: translateY(-50%);
+  background:
+    radial-gradient(closest-side, rgba(167,139,250,.20), transparent 70%),
+    radial-gradient(closest-side, rgba(94,234,212,.16), transparent 70%);
+  background-size: 160px 18px, 220px 18px;
+  background-position: 0 50%, 55% 50%;
+  filter: blur(2px);
+  opacity: .55;
+  pointer-events:none;
+}
+
 
 
 
